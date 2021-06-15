@@ -1,11 +1,25 @@
+:root{
+    --title-color: #322153;
+    --button-color: #34cb79;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
 html{
     font-family: 'Roboto', 'sans-serif';
 }
 
 body{
     background: #b9def9;
+    -webkit-font-smoothing: antialiased;
 }
 
+h1, h2, h3, h4, h5, h6{
+    color: var(--title-color);
+}
 
  /*Box Model */ 
  
@@ -14,23 +28,30 @@ body{
 #page-home{
     height: 100vh;
     background: url('../assets/home-background.svg') no-repeat;
-    background-position: 35vw bottom;
+    background-position: 38vw bottom;
 }
 
 #page-home header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 25px;
 }
 
 #page-home .content{
     width: 90%;
     max-width: 1100px;
     margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 #page-home header a{
     display: flex;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--title-color);
 }
 
 #page-home header a span{
@@ -38,4 +59,82 @@ body{
     background-image: url('../assets/log-in.svg');
     width: 20px;
     height: 20px;
+}
+
+#page-home main{
+    max-width: 560px;
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-home h1{
+    font-size: 54px;
+}
+
+#page-home main p{
+    font-size: 24px;
+    line-height: 38px;
+    margin-top: 24px;
+}
+
+#page-home main a{
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: var(--button-color);
+    text-align:center;
+    border-radius: 25px;
+    color: white;
+    font-weight: 1000;
+    transition: 400ms;
+}
+
+#page-home main a:hover{
+    background-color: #2fb86e;
+}
+
+#page-home main a span{
+    width: 60px;
+    height: 72px;
+    border-radius: 25px;
+    margin-right: 10px;
+    background-color: #2fb86e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-home main a span::after{
+    content: "";
+    background-image: url('../assets/search.svg');
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 900px) {
+    #page-home{
+        background-position-x: 70vw;
+    }
+
+    #page-home .content{
+        align-items: center;
+        text-align: center;
+    }
+
+    #page-home main{
+        align-items: center;
+    }
+
+    #page-home header a{
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
